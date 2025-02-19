@@ -6,7 +6,6 @@ const NavBar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log(user);
   useEffect(() => {
     localStorage.setItem("theme", theme);
     document.querySelector("html", theme).setAttribute("data-theme", theme);

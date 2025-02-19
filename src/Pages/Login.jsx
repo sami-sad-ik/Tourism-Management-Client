@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -15,10 +15,25 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
+        form.reset();
       })
       .catch((error) => {
         console.error(error);
       });
+  };
+  const handleGoogle = () => {
+    googleSignIn()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => console.error(error));
+  };
+  const handleGithub = () => {
+    githubSignIn()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => console.error(error));
   };
   return (
     <div className="hero bg-base-200 min-h-[calc(100vh-67px)]">
@@ -53,11 +68,11 @@ const Login = () => {
               REGISTER
             </Link>
           </p>
-          <button className="btn">
+          <button onClick={handleGoogle} className="btn">
             <FcGoogle />
             Sign in wtih Google
           </button>
-          <button className="btn">
+          <button onClick={handleGithub} className="btn">
             <FaGithub />
             Sign In with Github
           </button>
