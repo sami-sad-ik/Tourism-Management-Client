@@ -13,6 +13,7 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:5000/tourist-spots"),
       },
       {
         path: "/add-tourist-spot",

@@ -24,11 +24,6 @@ const AddTouristSpot = () => {
       email,
       description,
     };
-    const country = {
-      countryname,
-      description,
-      image,
-    };
     console.log(touristSpot);
     fetch("http://localhost:5000/tourist-spots", {
       method: "POST",
@@ -40,17 +35,7 @@ const AddTouristSpot = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-      });
-    fetch("http://localhost:5000/countries", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(country),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+        
       });
   };
   return (
