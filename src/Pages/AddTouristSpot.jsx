@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddTouristSpot = () => {
   const handleAddTourist = (e) => {
     e.preventDefault();
@@ -35,7 +37,13 @@ const AddTouristSpot = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        
+        if (data.acknowledged) {
+          Swal.fire({
+            text: "Tourist Spot Added",
+            icon: "success",
+          });
+          form.reset();
+        }
       });
   };
   return (
