@@ -82,16 +82,16 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm text-blue-600 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-semibold">
+            className="menu menu-sm text-blue-600 dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-bold">
             {navLinks}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-2xl gap-0">
+        <Link to="/" className="btn btn-ghost text-2xl font-extrabold gap-0">
           <span className="text-amber-600">Travel </span>
           <span className="text-blue-600">Go</span>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex font-semibold">
+      <div className="navbar-center hidden lg:flex font-bold">
         <ul className="menu menu-horizontal text-blue-600 tracking-wide px-1">
           {navLinks}
         </ul>

@@ -5,6 +5,8 @@ import AddTouristSpot from "../Pages/AddTouristSpot";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
 import SpotDetails from "../Components/SpotDetails";
+import CountrySpots from "../Components/CountrySpots";
+import AllTouristSpots from "../Pages/AllTouristSpots";
 
 const routes = createBrowserRouter([
   {
@@ -33,6 +35,17 @@ const routes = createBrowserRouter([
         element: <SpotDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/spot-details/${params.id}`),
+      },
+      {
+        path: "/countries/:country",
+        element: <CountrySpots />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/countries/${params.country}`),
+      },
+      {
+        path: "/all-tourist-spots",
+        element: <AllTouristSpots />,
+        loader: () => fetch("http://localhost:5000/tourist-spots"),
       },
     ],
   },
