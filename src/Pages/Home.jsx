@@ -32,7 +32,7 @@ const Home = () => {
           Explore Sountheast Asia more
         </h1>
         <Marquee pauseOnHover={true}>
-          <div className=" flex bg-base-300 rounded-md">
+          <div className=" flex bg-base-300">
             {countries.map((country) => (
               <CountryCard key={country._id} country={country} />
             ))}

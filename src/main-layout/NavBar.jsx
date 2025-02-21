@@ -50,7 +50,7 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
-          to="all-tourist-spots"
+          to="/all-tourist-spots"
           className={({ isActive }) =>
             isActive
               ? "text-amber-600 border-b-2 border-amber-600 rounded-none no-underline focus:outline-none focus:bg-none"
@@ -59,6 +59,19 @@ const NavBar = () => {
           All Tourist Spots
         </NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink
+            to="/myList"
+            className={({ isActive }) =>
+              isActive
+                ? "text-amber-600 border-b-2 border-amber-600 rounded-none no-underline focus:outline-none focus:bg-none"
+                : "no-underline text-inherit  focus:bg-none"
+            }>
+            My List
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (

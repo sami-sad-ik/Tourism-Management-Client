@@ -44,7 +44,7 @@ const AllTouristSpots = () => {
           Highest to Lowest
         </li>
       </ul>
-      <div className="my-14 grid md:grid-cols-3 gap-5 px-11">
+      <div className="my-14 grid md:grid-cols-3 gap-5 ">
         {sortedSpots.map((spot) => (
           <SpotCard key={spot._id} spot={spot} />
         ))}
