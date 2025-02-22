@@ -45,6 +45,9 @@ const MyList = () => {
 
   return (
     <div className="md:w-4/5 mx-auto overflow-x-auto ">
+      <h2 className="my-12 text-4xl font-bold text-center">
+        Tourist spots added by you
+      </h2>
       <table className="table text-center text-xl">
         <thead className="text-xl">
           <tr>
